@@ -8,7 +8,7 @@
 
     var ones=['','un','dos','tres','cuatro','cinco','seis','siete','ocho','nueve'];
 var tens=['','','veinte','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];
-var tenscomp=['','','veniti','treinta y ','cuarenta y ','cincuenta y ','sesenta y ','setenta y ','ochenta y ','noventa y '];
+var tenscomp=['','','veinti','treinta y ','cuarenta y ','cincuenta y ','sesenta y ','setenta y ','ochenta y ','noventa y '];
 var teens=['diez','once','doce','trece','catorce','quince','dieciseis','diecisiete','dieciocho','diecinueve'];
 var cientos=['','ciento','doscientos','trescientos','cuatrocientos','quinientos','seiscientos','setecientos','ochocientos','novecientos'];
 
@@ -54,7 +54,8 @@ var cientos=['','ciento','doscientos','trescientos','cuatrocientos','quinientos'
         if (num<10) return ones[num];
         else if (num>=10 && num<20) return teens[num-10];
         else{
-            return tenscomp[Math.floor(num/10)]+ones[num%10];
+            if((num/10)%1 === 0) return tens[Math.floor(num/10)]
+            else return tenscomp[Math.floor(num/10)]+ones[num%10];
         }
     }
 
